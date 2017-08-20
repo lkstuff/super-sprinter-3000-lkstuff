@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Super Sprinter 3000 - Add new Story</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h2>User Story Manager - Add new Story</h2>
+        <form action="/save-note" method="post">
+            
+            <p>Story Title<br>
+            <input type="text" name="Story Title"></p>
+            <p>User Story<br>
+            <textarea name="story" rows="5" cols="20" maxlength="50"></textarea></p>
+            <p>Acceptance criteria<br>
+            <textarea name="criteria" rows="5" cols="20"></textarea></p>
+            <p>Business Value<br>
+            <input type="number" name="business_value" min="100" max="1500" step="100"></p>
+            <p>Estimation (h)<br>
+            <input type="number" name="estimation_hours" min="0.5" max="40" step="0.5"></p>
+            <p>Status<br>
+            <select>
+                <option>Planning</option>
+                <option>TODO</option>
+                <option>In Progress</option>
+                <option>Rewiev</option>
+                <option>Done</option>
+            </select></p>
+            <p><a href="/save-note"><button>Create</button></a></p>
+    </body>
+</html>

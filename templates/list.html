@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Super Sprinter 3000</title>
+        <meta charset="UTF-8">
+        <style>
+            table {border: 2px solid black;border-collapse: collapse;}
+            th, td {font-weight: normal;
+                    border: 2px  solid black;
+                    border-collapse: collapse,}
+        </style>
+    </head>
+    <body>
+        <h2>User Story Manager</h2>
+        <p>
+            <a href="/edit-note"><button>New Story</button></a>
+        </p>
+        <p>
+            {% if table is not none %}
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Story Title</th>
+                        <th>User Strory</th>
+                        <th>Acceptance Criteria</th>
+                        <th>Business Value</th>
+                        <th>Estimation(h)</th>
+                        <th>Status</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    {% for story in table %}
+                        <tr>
+                            {% for item in story %}
+                                <td>{{item}}</td>
+                            {% endfor %}
+                            <td><a href="edit-note/{{story[0]}}"><button id='edit'>Edit</button></a></td>
+                            <td><a href="delete-story/{{story[0]}}"><button id='delete'>Delete</button></a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+        </p>
+    </body>
+</html>
